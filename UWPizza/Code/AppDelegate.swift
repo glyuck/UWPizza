@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 upwork. All rights reserved.
 //
 
+import MagicalRecord
 import UIKit
 import QuadratTouch
 
@@ -25,6 +26,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configuration.shouldControllNetworkActivityIndicator = true
         Session.setupSharedSessionWithConfiguration(configuration)
 
+        // Setup database
+        MagicalRecord.setupCoreDataStack()
+
         return true
     }
+
+    func applicationWillTerminate(application: UIApplication) {
+        MagicalRecord.cleanUp()
+    }
+
+    func setupDB() {
+        MagicalRecord.setupCoreDataStack()
+    }
+    
 }
