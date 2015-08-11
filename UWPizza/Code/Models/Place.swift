@@ -15,4 +15,6 @@ class Place: NSManagedObject {
     @NSManaged var placeId: String!
     @NSManaged var name: String!
     @NSManaged var addressStreet: String!
+    @NSManaged var addressLatitude: Double
+    @NSManaged var addressLongitude: Double
 }

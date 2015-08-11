@@ -13,13 +13,18 @@ import CoreLocation
 class PlacesListViewController: UIViewController, UITableViewDataSource, PlacesListDataProviderDelegate {
     lazy var dataProvider = PlacesListDataProvider()
 
+    let location = CLLocation(latitude: 51.5085300, longitude: -0.1257400)
+
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.registerNib(UINib(nibName: PlaceTableViewCell.reuseIdentifier, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: PlaceTableViewCell.reuseIdentifier)
+        tableView.rowHeight = PlaceTableViewCell.height
+        
         dataProvider.delegate = self
-        dataProvider.fetchDataForLocation(CLLocation(latitude: 51.5085300, longitude: -0.1257400))
+        dataProvider.fetchDataForLocation(location)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -34,9 +39,9 @@ class PlacesListViewController: UIViewController, UITableViewDataSource, PlacesL
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
+        let cell = tableView.dequeueReusableCellWithIdentifier(PlaceTableViewCell.reuseIdentifier, forIndexPath: indexPath) as! PlaceTableViewCell
         let place = dataProvider.places[indexPath.row]
-        cell.textLabel?.text = place.name
+        cell.configureWithPlace(place, location: location)
         return cell
     }
 

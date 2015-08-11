@@ -18,8 +18,10 @@ class MappingProvider {
             mapping.mapPropertiesFromDictionary([
                 "id": "placeId",
                 "name": "name",
-                "addressStreet": "location.address",
-                ])
+                "location.address": "addressStreet",
+                "location.lat": "addressLatitude",
+                "location.lng": "addressLongitude",
+            ])
         })
     }
 

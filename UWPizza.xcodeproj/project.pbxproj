@@ -14,6 +14,8 @@
 		390700AD1B79ECEB00D71AC5 /* uwpizza.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 390700AB1B79ECEB00D71AC5 /* uwpizza.xcdatamodeld */; };
 		390700B01B79EE4C00D71AC5 /* PlacesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390700AF1B79EE4C00D71AC5 /* PlacesListViewController.swift */; };
 		390700B21B79EE6600D71AC5 /* PlacesListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390700B11B79EE6600D71AC5 /* PlacesListDataSource.swift */; };
+		390700B61B79F72100D71AC5 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390700B41B79F72100D71AC5 /* PlaceTableViewCell.swift */; };
+		390700B71B79F72100D71AC5 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390700B51B79F72100D71AC5 /* PlaceTableViewCell.xib */; };
 		39FE83351B79D5F700D7CB21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39FE83331B79D5F700D7CB21 /* Main.storyboard */; };
 		39FE83371B79D5F700D7CB21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39FE83361B79D5F700D7CB21 /* Images.xcassets */; };
 		39FE833A1B79D5F700D7CB21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39FE83381B79D5F700D7CB21 /* LaunchScreen.xib */; };
@@ -75,6 +77,8 @@
 		390700AC1B79ECEB00D71AC5 /* uwpizza.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = uwpizza.xcdatamodel; sourceTree = "<group>"; };
 		390700AF1B79EE4C00D71AC5 /* PlacesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesListViewController.swift; sourceTree = "<group>"; };
 		390700B11B79EE6600D71AC5 /* PlacesListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesListDataSource.swift; sourceTree = "<group>"; };
+		390700B41B79F72100D71AC5 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
+		390700B51B79F72100D71AC5 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
 		39FE832A1B79D5F700D7CB21 /* UWPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UWPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FE832E1B79D5F700D7CB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39FE83341B79D5F700D7CB21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,6 +147,15 @@
 			path = PlacesListViewController;
 			sourceTree = "<group>";
 		};
+		390700B31B79F70B00D71AC5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				390700B41B79F72100D71AC5 /* PlaceTableViewCell.swift */,
+				390700B51B79F72100D71AC5 /* PlaceTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		39FE83211B79D5F700D7CB21 = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +221,7 @@
 				39FE83511B79D65600D7CB21 /* Controllers */,
 				390700A41B79E84500D71AC5 /* Models */,
 				3907009F1B79E04F00D71AC5 /* Services */,
+				390700B31B79F70B00D71AC5 /* Views */,
 				39FE83501B79D65600D7CB21 /* AppDelegate.swift */,
 			);
 			path = Code;
@@ -350,6 +364,7 @@
 				39FE83351B79D5F700D7CB21 /* Main.storyboard in Resources */,
 				39FE833A1B79D5F700D7CB21 /* LaunchScreen.xib in Resources */,
 				39FE83371B79D5F700D7CB21 /* Images.xcassets in Resources */,
+				390700B71B79F72100D71AC5 /* PlaceTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +433,7 @@
 				390700AD1B79ECEB00D71AC5 /* uwpizza.xcdatamodeld in Sources */,
 				390700B21B79EE6600D71AC5 /* PlacesListDataSource.swift in Sources */,
 				390700A11B79E04F00D71AC5 /* PlacesService.swift in Sources */,
+				390700B61B79F72100D71AC5 /* PlaceTableViewCell.swift in Sources */,
 				39FE83531B79D65600D7CB21 /* AppDelegate.swift in Sources */,
 				390700A81B79E86400D71AC5 /* MappingProvider.swift in Sources */,
 				390700B01B79EE4C00D71AC5 /* PlacesListViewController.swift in Sources */,
