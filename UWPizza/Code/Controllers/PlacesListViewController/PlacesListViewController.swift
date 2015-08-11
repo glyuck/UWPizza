@@ -10,10 +10,9 @@ import UIKit
 import CoreLocation
 
 
-class PlacesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, PlacesListDataProviderDelegate {
+class PlacesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, PlacesListDataProviderDelegate, PlacesListLocationManagerDelegate {
     lazy var dataProvider = PlacesListDataProvider()
-
-    let location = CLLocation(latitude: 51.5085300, longitude: -0.1257400)
+    lazy var locationManager = PlacesListLocationManager()
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -22,9 +21,11 @@ class PlacesListViewController: UIViewController, UITableViewDataSource, UITable
 
         tableView.registerNib(UINib(nibName: PlaceTableViewCell.reuseIdentifier, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: PlaceTableViewCell.reuseIdentifier)
         tableView.rowHeight = PlaceTableViewCell.height
-        
+
+        locationManager.delegate = self
+        locationManager.requireLocationBeforeContinue()
+
         dataProvider.delegate = self
-        dataProvider.fetchDataForLocation(location)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -35,7 +36,7 @@ class PlacesListViewController: UIViewController, UITableViewDataSource, UITable
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let placeDetailsViewController = segue.destinationViewController as? PlaceDetailsViewController, let place = sender as? Place {
             placeDetailsViewController.place = place
-            placeDetailsViewController.location = location
+            placeDetailsViewController.location = locationManager.location
         }
     }
     
@@ -48,7 +49,7 @@ class PlacesListViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(PlaceTableViewCell.reuseIdentifier, forIndexPath: indexPath) as! PlaceTableViewCell
         let place = dataProvider.places[indexPath.row]
-        cell.configureWithPlace(place, location: location)
+        cell.configureWithPlace(place, location: locationManager.location!)
         return cell
     }
 
@@ -63,5 +64,11 @@ class PlacesListViewController: UIViewController, UITableViewDataSource, UITable
 
     func placesListDataProviderDidUpdateData(dataProvider: PlacesListDataProvider) {
         tableView.reloadData()
+    }
+
+    // MARK: - PlacesListLocationManagerDelegate
+
+    func placesListLocationManager(locationManager: PlacesListLocationManager, didUpdateToLoation location: CLLocation) {
+        dataProvider.fetchDataForLocation(location)
     }
 }

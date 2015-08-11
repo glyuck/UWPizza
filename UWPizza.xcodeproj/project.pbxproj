@@ -17,6 +17,7 @@
 		390700B61B79F72100D71AC5 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390700B41B79F72100D71AC5 /* PlaceTableViewCell.swift */; };
 		390700B71B79F72100D71AC5 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390700B51B79F72100D71AC5 /* PlaceTableViewCell.xib */; };
 		390700B91B79FCF400D71AC5 /* PlaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390700B81B79FCF400D71AC5 /* PlaceDetailsViewController.swift */; };
+		390700BB1B7A030100D71AC5 /* PlacesListLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390700BA1B7A030100D71AC5 /* PlacesListLocationManager.swift */; };
 		39FE83351B79D5F700D7CB21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39FE83331B79D5F700D7CB21 /* Main.storyboard */; };
 		39FE83371B79D5F700D7CB21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39FE83361B79D5F700D7CB21 /* Images.xcassets */; };
 		39FE833A1B79D5F700D7CB21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39FE83381B79D5F700D7CB21 /* LaunchScreen.xib */; };
@@ -81,6 +82,7 @@
 		390700B41B79F72100D71AC5 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		390700B51B79F72100D71AC5 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
 		390700B81B79FCF400D71AC5 /* PlaceDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewController.swift; sourceTree = "<group>"; };
+		390700BA1B7A030100D71AC5 /* PlacesListLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesListLocationManager.swift; sourceTree = "<group>"; };
 		39FE832A1B79D5F700D7CB21 /* UWPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UWPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FE832E1B79D5F700D7CB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39FE83341B79D5F700D7CB21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				390700B11B79EE6600D71AC5 /* PlacesListDataSource.swift */,
+				390700BA1B7A030100D71AC5 /* PlacesListLocationManager.swift */,
 				390700AF1B79EE4C00D71AC5 /* PlacesListViewController.swift */,
 			);
 			path = PlacesListViewController;
@@ -437,6 +440,7 @@
 				390700B21B79EE6600D71AC5 /* PlacesListDataSource.swift in Sources */,
 				390700A11B79E04F00D71AC5 /* PlacesService.swift in Sources */,
 				390700B61B79F72100D71AC5 /* PlaceTableViewCell.swift in Sources */,
+				390700BB1B7A030100D71AC5 /* PlacesListLocationManager.swift in Sources */,
 				39FE83531B79D65600D7CB21 /* AppDelegate.swift in Sources */,
 				390700A81B79E86400D71AC5 /* MappingProvider.swift in Sources */,
 				390700B91B79FCF400D71AC5 /* PlaceDetailsViewController.swift in Sources */,
