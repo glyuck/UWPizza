@@ -14,7 +14,7 @@ import QuadratTouch
 class PlacesService {
     enum Constants {
         static let limit = 5
-        static let query = "pizza restaurant"
+        static let query = "pizza"
     }
 
     enum Notifications {

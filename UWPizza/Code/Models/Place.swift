@@ -19,9 +19,12 @@ class Place: NSManagedObject {
     @NSManaged var addressLatitude: Double
     @NSManaged var addressLongitude: Double
 
-    func distanceStringFromLocation(location: CLLocation) -> String {
-        let selfLocation = CLLocation(latitude: addressLatitude, longitude: addressLongitude)
-        let distance = location.distanceFromLocation(selfLocation)
+    var location: CLLocation {
+        return CLLocation(latitude: addressLatitude, longitude: addressLongitude)
+    }
+
+    func distanceStringFromLocation(otherLocation: CLLocation) -> String {
+        let distance = location.distanceFromLocation(otherLocation)
         if distance > 1000 {
             return String(format: "%.01f km", distance/1000)
         } else {
