@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3907009E1B79E00A00D71AC5 /* QuadratTouch.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3907009A1B79DFCB00D71AC5 /* QuadratTouch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		390700A11B79E04F00D71AC5 /* PlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390700A01B79E04F00D71AC5 /* PlacesService.swift */; };
 		39FE83351B79D5F700D7CB21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39FE83331B79D5F700D7CB21 /* Main.storyboard */; };
 		39FE83371B79D5F700D7CB21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39FE83361B79D5F700D7CB21 /* Images.xcassets */; };
 		39FE833A1B79D5F700D7CB21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39FE83381B79D5F700D7CB21 /* LaunchScreen.xib */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		390700921B79DFCB00D71AC5 /* Quadrat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quadrat.xcodeproj; path = "das-quadrat/Source/Quadrat.xcodeproj"; sourceTree = "<group>"; };
+		390700A01B79E04F00D71AC5 /* PlacesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesService.swift; sourceTree = "<group>"; };
 		39FE832A1B79D5F700D7CB21 /* UWPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UWPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FE832E1B79D5F700D7CB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39FE83341B79D5F700D7CB21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 				3907009A1B79DFCB00D71AC5 /* QuadratTouch.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3907009F1B79E04F00D71AC5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				390700A01B79E04F00D71AC5 /* PlacesService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		39FE83211B79D5F700D7CB21 = {
@@ -169,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				39FE83511B79D65600D7CB21 /* Controllers */,
+				3907009F1B79E04F00D71AC5 /* Services */,
 				39FE83501B79D65600D7CB21 /* AppDelegate.swift */,
 			);
 			path = Code;
@@ -376,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				390700A11B79E04F00D71AC5 /* PlacesService.swift in Sources */,
 				39FE83541B79D65600D7CB21 /* PlacesListViewController.swift in Sources */,
 				39FE83531B79D65600D7CB21 /* AppDelegate.swift in Sources */,
 			);
