@@ -25,11 +25,12 @@ class MappingProvider {
 
     class func saveToPersistantStorageObjectsArray(JSONArray: [[String: AnyObject]], withMapping mapping: EKManagedObjectMapping) -> [AnyObject]! {
         let context = NSManagedObjectContext.MR_context()
-        return EKManagedObjectMapper.arrayOfObjectsFromExternalRepresentation(
+        let result = EKManagedObjectMapper.arrayOfObjectsFromExternalRepresentation(
             JSONArray,
             withMapping: mapping,
             inManagedObjectContext: context)
-
+        context.MR_saveToPersistentStoreAndWait()
+        return result
     }
 }
 //[categories: (
