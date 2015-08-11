@@ -12,7 +12,7 @@
 		39FE833A1B79D5F700D7CB21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39FE83381B79D5F700D7CB21 /* LaunchScreen.xib */; };
 		39FE83461B79D5F700D7CB21 /* UWPizzaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FE83451B79D5F700D7CB21 /* UWPizzaTests.swift */; };
 		39FE83531B79D65600D7CB21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FE83501B79D65600D7CB21 /* AppDelegate.swift */; };
-		39FE83541B79D65600D7CB21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FE83521B79D65600D7CB21 /* ViewController.swift */; };
+		39FE83541B79D65600D7CB21 /* PlacesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FE83521B79D65600D7CB21 /* PlacesListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,7 @@
 		39FE83441B79D5F700D7CB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39FE83451B79D5F700D7CB21 /* UWPizzaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UWPizzaTests.swift; sourceTree = "<group>"; };
 		39FE83501B79D65600D7CB21 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		39FE83521B79D65600D7CB21 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		39FE83521B79D65600D7CB21 /* PlacesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +123,7 @@
 		39FE83511B79D65600D7CB21 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				39FE83521B79D65600D7CB21 /* ViewController.swift */,
+				39FE83521B79D65600D7CB21 /* PlacesListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -228,7 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39FE83541B79D65600D7CB21 /* ViewController.swift in Sources */,
+				39FE83541B79D65600D7CB21 /* PlacesListViewController.swift in Sources */,
 				39FE83531B79D65600D7CB21 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
