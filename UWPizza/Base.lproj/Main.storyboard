@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4xh-Cn-dyl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -37,6 +38,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="jGN-fy-iRb" id="nCB-ps-XHD"/>
+                                    <outlet property="delegate" destination="jGN-fy-iRb" id="nAL-Xe-GkO"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -51,11 +53,66 @@
                     <navigationItem key="navigationItem" id="3Ds-5t-msh"/>
                     <connections>
                         <outlet property="tableView" destination="55h-8U-aRa" id="4nf-3X-zON"/>
+                        <segue destination="snY-xr-wZX" kind="show" identifier="ShowPlaceDetailsViewController" id="rBY-kW-rm2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmT-N8-rwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="671" y="900"/>
+        </scene>
+        <!--Place Details View Controller-->
+        <scene sceneID="mtR-ix-mQM">
+            <objects>
+                <viewController id="snY-xr-wZX" customClass="PlaceDetailsViewController" customModule="UWPizza" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tFx-wB-WSg"/>
+                        <viewControllerLayoutGuide type="bottom" id="tB0-VT-LUg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qMi-bL-7iG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza hut" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNK-bs-4ni">
+                                <rect key="frame" x="16" y="72" width="67" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance: 300 m" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfC-tr-iMg">
+                                <rect key="frame" x="16" y="130" width="121" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Street name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGm-kR-MwN">
+                                <rect key="frame" x="16" y="101" width="138" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NNK-bs-4ni" firstAttribute="top" secondItem="tFx-wB-WSg" secondAttribute="bottom" constant="8" id="CJe-Nu-eto"/>
+                            <constraint firstItem="oGm-kR-MwN" firstAttribute="leading" secondItem="qMi-bL-7iG" secondAttribute="leadingMargin" id="EgZ-uH-MnK"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="NNK-bs-4ni" secondAttribute="trailing" constant="8" id="GxL-wI-xo9"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="hfC-tr-iMg" secondAttribute="trailing" constant="8" id="TgX-Ek-w1Y"/>
+                            <constraint firstItem="hfC-tr-iMg" firstAttribute="top" secondItem="oGm-kR-MwN" secondAttribute="bottom" constant="8" id="U4A-jg-dxZ"/>
+                            <constraint firstItem="NNK-bs-4ni" firstAttribute="leading" secondItem="qMi-bL-7iG" secondAttribute="leadingMargin" id="cYF-xC-N0r"/>
+                            <constraint firstItem="oGm-kR-MwN" firstAttribute="top" secondItem="NNK-bs-4ni" secondAttribute="bottom" constant="8" id="n7t-aQ-GmD"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="oGm-kR-MwN" secondAttribute="trailing" constant="8" id="wSw-s9-sGC"/>
+                            <constraint firstItem="hfC-tr-iMg" firstAttribute="leading" secondItem="qMi-bL-7iG" secondAttribute="leadingMargin" id="wmp-d9-8jN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="oGm-kR-MwN" id="njV-Gh-eaT"/>
+                        <outlet property="distanceLabel" destination="hfC-tr-iMg" id="VbC-aY-jdh"/>
+                        <outlet property="nameLabel" destination="NNK-bs-4ni" id="EP9-IT-lIA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oJG-5l-Nc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1497" y="900"/>
         </scene>
     </scenes>
 </document>

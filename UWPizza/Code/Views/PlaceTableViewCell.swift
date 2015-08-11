@@ -22,8 +22,6 @@ class PlaceTableViewCell: UITableViewCell {
     func configureWithPlace(place: Place, location: CLLocation) {
         nameLabel.text = place.name
         addressLabel.text = place.addressStreet
-        let placeLocation = CLLocation(latitude: place.addressLatitude, longitude: place.addressLongitude)
-        let distance = Int(round(location.distanceFromLocation(placeLocation)))
-        distanceLabel.text = "\(distance) m"
+        distanceLabel.text = place.distanceStringFromLocation(location)
     }
 }

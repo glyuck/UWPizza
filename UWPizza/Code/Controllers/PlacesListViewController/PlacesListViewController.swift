@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 
-class PlacesListViewController: UIViewController, UITableViewDataSource, PlacesListDataProviderDelegate {
+class PlacesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, PlacesListDataProviderDelegate {
     lazy var dataProvider = PlacesListDataProvider()
 
     let location = CLLocation(latitude: 51.5085300, longitude: -0.1257400)
@@ -32,6 +32,13 @@ class PlacesListViewController: UIViewController, UITableViewDataSource, PlacesL
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let placeDetailsViewController = segue.destinationViewController as? PlaceDetailsViewController, let place = sender as? Place {
+            placeDetailsViewController.place = place
+            placeDetailsViewController.location = location
+        }
+    }
+    
     // MARK: - UITableViewDataSource
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,6 +52,13 @@ class PlacesListViewController: UIViewController, UITableViewDataSource, PlacesL
         return cell
     }
 
+    // MARK: - UITableViewDelegate
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        performSegueWithIdentifier("ShowPlaceDetailsViewController", sender: dataProvider.places[indexPath.row])
+    }
+    
     // MARK: - PlacesListDataProviderDelegate
 
     func placesListDataProviderDidUpdateData(dataProvider: PlacesListDataProvider) {
