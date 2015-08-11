@@ -30,7 +30,7 @@ class PlacesService {
 
         let searchTask = Session.sharedSession().venues.search(parameters) { (result: QuadratTouch.Result) in
             if let response = result.response, let venues = response["venues"] as? [[String:AnyObject]] {
-                println("venues: \(venues)")
+//                println("venues: \(venues)")
                 MappingProvider.saveToPersistantStorageObjectsArray(venues, withMapping: MappingProvider.placeMapping)
                 NSNotificationCenter.defaultCenter().postNotificationName(Notifications.DidUpdatePlaces, object: self)
             }
