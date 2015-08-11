@@ -47,7 +47,7 @@ class PlacesListDataProvider: NSObject {
         if let location = location {
             let allPlaces = Place.MR_findAll() as! [Place]
             let nearPlaces = allPlaces.sorted { return $0.location.distanceFromLocation(location) < $1.location.distanceFromLocation(location) }
-            places = Array(allPlaces[0..<min(allPlaces.count, PlacesService.Constants.limit)]).sorted { $0.name < $1.name }
+            places = Array(nearPlaces[0..<min(nearPlaces.count, PlacesService.Constants.limit)]).sorted { $0.name < $1.name }
             delegate?.placesListDataProviderDidUpdateData(self)
         } else {
             places = []
